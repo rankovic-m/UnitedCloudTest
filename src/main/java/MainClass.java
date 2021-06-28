@@ -20,14 +20,19 @@ public class MainClass {
         Thread.sleep(1000);
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//input[@id='username']")).sendKeys("milica.rankovic");
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Lozinka123");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[contains(text(),'LOGIN')]")).click();
-
+        System.out.println("User is logged in!");
+        Thread.sleep(3000);
         createAccount(driver);
+        System.out.println("Account created!");
         deleteAccount(driver);
-
+        System.out.println("The account has been deleted!");
+        Thread.sleep(3000);
         driver.close();
+        System.out.println("The test was successful!");
     }
 
     public static void createAccount(WebDriver driver) throws InterruptedException {
